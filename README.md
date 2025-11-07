@@ -1,1 +1,1 @@
-# Yapay-Zeka-Destekli-Ara-Se-im-Asistan-
+# Yapay-Zeka-Destekli-Arac-Secim-Asistani
