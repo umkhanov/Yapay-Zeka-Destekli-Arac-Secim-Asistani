@@ -3,57 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Araba Tavsiye Asistanı</title>
+    <title>Araba Tavsiye Asistanı - AI Powered</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <!-- Заголовок -->
-        <header class="header">
-            <h1>🚗 Araba Tavsiye Asistanı</h1>
-            <p class="subtitle">Yapay zeka destekli akıllı araç önerisi</p>
-        </header>
-
-        <!-- Форма поиска -->
-        <div class="search-section">
-            <div class="input-wrapper">
-                <textarea 
-                    id="userQuery" 
-                    placeholder="Örnek: 400.000 TL altı, az yakan bir aile arabası istiyorum..."
-                    rows="3"
-                ></textarea>
-            </div>
-            <button id="searchBtn" class="search-btn">
-                <span class="btn-text">Araç Öner</span>
-                <span class="btn-icon">→</span>
-            </button>
-        </div>
-
-        <!-- Индикатор загрузки -->
-        <div id="loading" class="loading hidden">
-            <div class="spinner"></div>
-            <p>Araçlar analiz ediliyor...</p>
-        </div>
-
-        <!-- Результаты -->
-        <div id="results" class="results hidden">
-            <!-- Объяснение от Gemini -->
-            <div class="explanation-box">
-                <h2>💡 Öneri Açıklaması</h2>
-                <div id="explanation" class="explanation-text"></div>
-            </div>
-
-            <!-- Карточки автомобилей -->
-            <div class="cars-section">
-                <h2>🎯 Önerilen Araçlar</h2>
-                <div id="carsList" class="cars-grid"></div>
-            </div>
-        </div>
-
-        <!-- Сообщения об ошибках -->
-        <div id="error" class="error hidden"></div>
+    <!-- Animated Background -->
+    <div class="background">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
     </div>
 
-    <script src="script.js"></script>
-</body>
-</html>
+    <div class="container">
+        <!-- Hero Section -->
+        <header class="hero">
+            <div class="logo-badge">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 17H5V7H19V17Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16 3L18 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 7L8 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="8" cy="17" r="2" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="16" cy="17" r="2" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </div>
+            <h1 class="hero-title">
+                Araba Tavsiye Asistanı
+                <span class="ai-badge">AI</span>
+            </h1>
+            <p class="hero-subtitle">Yapay zeka ile size en uygun aracı buluyoruz</p>
+            
+            <!-- Stats -->
+            <div class="stats-row">
+                <div class="stat-item">
+                    <div class="stat-number">1000+</div>
+                    <div class="stat-label">Araç</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">AI Ajan</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">99%</div>
+                    <div class="stat-label">Doğruluk</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Search Card -->
+        <div class="search-card glass-card">
+            <div class="card-header">
+                <h2 class="card-title">Ne Arıyorsunuz?</h2>
+                <p class="card-subtitle">İstediğiniz özellikleri doğal dille anlatın</p>
+            </div>
+
+            <div class="input-group">
+                <div class="input-icon">
