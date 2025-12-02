@@ -1,18 +1,59 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>Araba Tavsiye Asistanı</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Araba Tavsiye Asistanı</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Araba Tavsiye Asistanı</h1>
+    <div class="container">
+        <!-- Заголовок -->
+        <header class="header">
+            <h1>🚗 Araba Tavsiye Asistanı</h1>
+            <p class="subtitle">Yapay zeka destekli akıllı araç önerisi</p>
+        </header>
 
-  <textarea id="query" placeholder="Araba isteğinizi yazın..."></textarea>
-  <button onclick="sendQuery()">Gönder</button>
+        <!-- Форма поиска -->
+        <div class="search-section">
+            <div class="input-wrapper">
+                <textarea 
+                    id="userQuery" 
+                    placeholder="Örnek: 400.000 TL altı, az yakan bir aile arabası istiyorum..."
+                    rows="3"
+                ></textarea>
+            </div>
+            <button id="searchBtn" class="search-btn">
+                <span class="btn-text">Araç Öner</span>
+                <span class="btn-icon">→</span>
+            </button>
+        </div>
 
-  <div id="result"></div>
+        <!-- Индикатор загрузки -->
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Araçlar analiz ediliyor...</p>
+        </div>
 
-  <script src="script.js"></script>
+        <!-- Результаты -->
+        <div id="results" class="results hidden">
+            <!-- Объяснение от Gemini -->
+            <div class="explanation-box">
+                <h2>💡 Öneri Açıklaması</h2>
+                <div id="explanation" class="explanation-text"></div>
+            </div>
+
+            <!-- Карточки автомобилей -->
+            <div class="cars-section">
+                <h2>🎯 Önerilen Araçlar</h2>
+                <div id="carsList" class="cars-grid"></div>
+            </div>
+        </div>
+
+        <!-- Сообщения об ошибках -->
+        <div id="error" class="error hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
