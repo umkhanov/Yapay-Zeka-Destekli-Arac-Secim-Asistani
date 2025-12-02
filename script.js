@@ -4,7 +4,7 @@ async function sendQuery() {
 
   resultDiv.innerHTML = "Yükleniyor...";
 
-  const response = await fetch("https://YOUR_RENDER_URL/api/recommend", {
+  const response = await fetch("https://RENDER_URL/api/recommend", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ query: q })
