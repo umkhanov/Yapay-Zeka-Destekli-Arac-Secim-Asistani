@@ -61,3 +61,120 @@
 
             <div class="input-group">
                 <div class="input-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <textarea 
+                    id="userQuery" 
+                    placeholder="Örnek: 500.000 TL altı, az yakan, ailem için güvenli bir SUV istiyorum..."
+                    rows="4"
+                ></textarea>
+            </div>
+
+            <!-- Quick Filters -->
+            <div class="quick-filters">
+                <span class="filter-label">Hızlı filtreler:</span>
+                <button class="filter-chip" onclick="insertQuickFilter('400.000 TL altı')">
+                    💰 400K altı
+                </button>
+                <button class="filter-chip" onclick="insertQuickFilter('az yakan')">
+                    ⛽ Az yakan
+                </button>
+                <button class="filter-chip" onclick="insertQuickFilter('aile arabası')">
+                    👨‍👩‍👧‍👦 Aile
+                </button>
+                <button class="filter-chip" onclick="insertQuickFilter('SUV')">
+                    🚙 SUV
+                </button>
+                <button class="filter-chip" onclick="insertQuickFilter('hibrit')">
+                    🔋 Hibrit
+                </button>
+            </div>
+
+            <button id="searchBtn" class="primary-btn">
+                <span class="btn-content">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 5L20 12L13 19M4 12H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Araç Bul</span>
+                </span>
+                <div class="btn-glow"></div>
+            </button>
+        </div>
+
+        <!-- Loading State -->
+        <div id="loading" class="loading-state hidden">
+            <div class="glass-card loading-card">
+                <div class="ai-thinking">
+                    <div class="thinking-animation">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                    <h3>AI Ajanlar Çalışıyor...</h3>
+                    <div class="agent-steps">
+                        <div class="agent-step active">
+                            <div class="step-icon">🔍</div>
+                            <span>Sorgu analiz ediliyor</span>
+                        </div>
+                        <div class="agent-step">
+                            <div class="step-icon">🎯</div>
+                            <span>Araçlar filtreleniyor</span>
+                        </div>
+                        <div class="agent-step">
+                            <div class="step-icon">📊</div>
+                            <span>Skorlar hesaplanıyor</span>
+                        </div>
+                        <div class="agent-step">
+                            <div class="step-icon">✨</div>
+                            <span>Açıklama oluşturuluyor</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error State -->
+        <div id="error" class="error-card glass-card hidden">
+            <div class="error-icon">⚠️</div>
+            <h3>Bir Sorun Oluştu</h3>
+            <p id="errorMessage"></p>
+            <button class="secondary-btn" onclick="hideError()">Tamam</button>
+        </div>
+
+        <!-- Results -->
+        <div id="results" class="results-section hidden">
+            <!-- AI Explanation -->
+            <div class="explanation-card glass-card">
+                <div class="card-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+                    </svg>
+                    AI Açıklama
+                </div>
+                <div id="explanation" class="explanation-content"></div>
+            </div>
+
+            <!-- Cars Grid -->
+            <div class="cars-container">
+                <div class="section-header">
+                    <h2 class="section-title">Size Özel Seçtik</h2>
+                    <div class="results-count">
+                        <span id="resultsCount">0</span> araç bulundu
+                    </div>
+                </div>
+                
+                <div id="carsList" class="cars-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Üretici ve Etmen Tabanlı Yapay Zeka Projesi • 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
